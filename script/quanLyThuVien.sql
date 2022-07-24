@@ -41,8 +41,8 @@ CREATE TABLE dausach (
 	isbn INT PRIMARY KEY,
 	ma_tuasach int NOT NULL,
 	ngonngu nchar(15),
-	bia char(15),
-	trangthai BIT,
+	bia nchar(15),
+	trangthai NCHAR(1),
 	CONSTRAINT dausach_tuasach_lk
 	FOREIGN KEY (ma_tuasach) REFERENCES tuasach(ma_tuasach)
 )
@@ -53,7 +53,7 @@ CREATE TABLE docgia (
 	ho NVARCHAR(15) NOT NULL,
 	tenlot CHAR,
 	ten NVARCHAR(15) NOT NULL,
-	hinh NVARCHAR(100)
+	ngay_sinh DATETIME NOT NULL
 )
 GO
 
@@ -72,7 +72,6 @@ GO
 CREATE TABLE treem (
 	ma_docgia SMALLINT NOT NULL PRIMARY KEY,
 	ma_docgia_nglon SMALLINT NOT NULL,
-	ngay_sinh DATETIME NOT NULL
 	CONSTRAINT treem_docgia_lk
 	FOREIGN KEY (ma_docgia) REFERENCES docgia(ma_docgia),
 	CONSTRAINT treem_nguoilon_lk
@@ -96,7 +95,7 @@ GO
 CREATE TABLE cuonsach (
 	isbn INT NOT NULL,
 	ma_cuonsach SMALLINT NOT NULL,
-	tinhtrang BIT NOT NULL,
+	tinhtrang NCHAR(1) NOT NULL,
 	PRIMARY KEY (isbn, ma_cuonsach),
 	CONSTRAINT cuonsach_dausach_lk
 	FOREIGN KEY (isbn) REFERENCES dausach(isbn)
@@ -125,6 +124,7 @@ CREATE TABLE qtrinhmuon (
 	ngay_hethan DATETIME,
 	ngay_tra DATETIME,
 	tien_phat DECIMAL(9,3),
+	tien_datra DECIMAL(9,3),
 	tien_coc DECIMAL(9,3),
 	ghichu NVARCHAR(255)
 	PRIMARY KEY (isbn, ma_cuonsach, ngay_muon),

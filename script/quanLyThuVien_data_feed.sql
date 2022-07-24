@@ -1,11 +1,11 @@
 ﻿USE quanLyThuVien
 GO
 
-INSERT INTO docgia
+INSERT INTO docgia (ma_docgia, ho, tenlot, ten, ngay_sinh)
 VALUES (1, N'Phạm', 'V', N'Bảo', '1990/01/05'),
 		(2, N'Võ', 'V', N'Dũng', '2010/01/01'),
 		(3, N'Văn', 'P', N'Phúc', '1988/05/06'),
-		(4, N'Bùi', 'N', N'Bình', '2011/08/09'),
+		(4, N'Bùi', NULL, N'Bình', '2011/08/09'),
 		(5, N'Lê', 'V', N'Sang', '1982/09/26'),
 		(6, N'Võ', 'H', N'Hà', '2012/12/07'),
 		(7, N'Lê', 'B', N'Mộng', '1990/03/06'),
@@ -16,26 +16,26 @@ VALUES (1, N'Phạm', 'V', N'Bảo', '1990/01/05'),
 		(12, N'Đỗ', 'B', N'Phương', '2012/07/15'),
 		(13, N'Đồng', 'L', N'Bình', '1977/02/25'),
 		(14, N'Thân', 'P', N'My', '2010/11/09'),
-		(15, N'Phan', 'N', N'Mỹ', '1983/03/26'),
+		(15, N'Phan', NULL, N'Mỹ', '1983/03/26'),
 		(16, N'Lê', 'T', N'Tấn', '2011/01/12'),
 		(17, N'Lê', 'T', N'Thịnh', '1980/03/15'),
 		(18, N'Nguyễn', 'T', N'Trung', '2012/01/02'),
 		(19, N'Nguyễn', 'T', N'Tiến', '1991/12/30'),
 		(20, N'Lê', 'D', N'Tiền', '2010/03/04'),
 		(21, N'Lê', 'D', N'Huy', '1980/02/07'),
-		(22, N'Trương', 'N', N'Quỳnh', '2011/02/03'),
-		(23, N'Trương', 'N', N'Thư', '1981/12/03'),
+		(22, N'Trương', NULL, N'Quỳnh', '2011/02/03'),
+		(23, N'Trương', NULL, N'Thư', '1981/12/03'),
 		(24, N'Phan', 'D', N'Quỳnh', '2012/12/11'),
 		(25, N'Phan', 'D', 'Tân', '1990/12/12'),
 		(26, N'Phan', 'D', 'Huy', '2010/06/12'),
 		(27, N'Phan', 'D', 'Ích', '1990/11/12'),
 		(28, N'Đào', 'C', N'Tí', '2011/11/17'),
 		(29, N'Đào', 'C', N'Tèo', '1971/11/11'),
-		(30, N'Đào', 'C', N'Sinh', '2012/12/13'),
+		(30, N'Đào', 'C', N'Linh', '2012/12/13'),
 		(31, N'Đào', 'C', N'Chuột', '1972/10/15')
 GO
 
-INSERT INTO nguoilon
+INSERT INTO nguoilon (ma_docgia, sonha, duong, quan, dienthoai, han_sd)
 VALUES (1, '10', N'Bùi Thị Xuân', '2', NULL, '2022/12/20'),
 		(3, '20', N'Đinh Bộ Lĩnh', '4', NULL, '2022/12/22'),
 		(5, '30', N'Dương Bá Trạc', '6', NULL, '2022/12/10'),
@@ -54,7 +54,7 @@ VALUES (1, '10', N'Bùi Thị Xuân', '2', NULL, '2022/12/20'),
 		(31, '97', N'Nguyễn Đình Chiểu', '11', NULL, '2022/12/31')
 GO
 
-INSERT INTO treem
+INSERT INTO treem (ma_docgia, ma_docgia_nglon)
 VALUES (2, 1),
 		(4, 1),
 		(6, 3),
@@ -84,7 +84,7 @@ VALUES (1, 'Last of the Mohicans', 'James Fenimore Cooper', N'Tóm tắt 1'),
 		(9, N'Chui vào lòng đất', N'Khải Hoàng', N'Tóm tắt 9')
 GO
 
-INSERT INTO dausach
+INSERT INTO dausach (isbn, ma_tuasach, ngonngu, bia, trangthai)
 VALUES (1011, 1, N'Tiếng Anh', N'Bìa mềm', 'Y'),
 		(1012, 1, N'Tiếng Pháp', N'Bìa mềm', 'Y'),
 		(1013, 1, N'Tiếng Việt', N'Bìa cứng', 'Y'),
@@ -114,154 +114,78 @@ VALUES (1011, 1, N'Tiếng Anh', N'Bìa mềm', 'Y'),
 		(1093, 9, N'Tiếng Việt', N'Bìa cứng', 'Y')
 GO
 
-insert into CUON_SACH values (1011, 1, 'Y')
-insert into CUON_SACH values (1011, 2, 'N')
-insert into CUON_SACH values (1011, 3, 'N')
-insert into CUON_SACH values (1012, 1, 'Y')
-insert into CUON_SACH values (1012, 2, 'N')
-insert into CUON_SACH values (1012, 3, 'N')
-insert into CUON_SACH values (1013, 1, 'Y')
-insert into CUON_SACH values (1013, 2, 'N')
-insert into CUON_SACH values (1013, 3, 'N')
-insert into CUON_SACH values (1021, 1, 'Y')
-insert into CUON_SACH values (1021, 2, 'N')
-insert into CUON_SACH values (1021, 3, 'N')
-insert into CUON_SACH values (1022, 1, 'Y')
-insert into CUON_SACH values (1022, 2, 'N')
-insert into CUON_SACH values (1022, 3, 'N')
-insert into CUON_SACH values (1023, 1, 'Y')
-insert into CUON_SACH values (1023, 2, 'N')
-insert into CUON_SACH values (1023, 3, 'N')
-insert into CUON_SACH values (1031, 1, 'Y')
-insert into CUON_SACH values (1031, 2, 'N')
-insert into CUON_SACH values (1031, 3, 'N')
-insert into CUON_SACH values (1032, 1, 'Y')
-insert into CUON_SACH values (1032, 2, 'N')
-insert into CUON_SACH values (1032, 3, 'N')
-insert into CUON_SACH values (1033, 1, 'Y')
-insert into CUON_SACH values (1033, 2, 'N')
-insert into CUON_SACH values (1033, 3, 'N')
-insert into CUON_SACH values (1041, 1, 'Y')
-insert into CUON_SACH values (1041, 2, 'N')
-insert into CUON_SACH values (1041, 3, 'N')
-insert into CUON_SACH values (1042, 1, 'Y')
-insert into CUON_SACH values (1042, 2, 'N')
-insert into CUON_SACH values (1042, 3, 'N')
-insert into CUON_SACH values (1043, 1, 'Y')
-insert into CUON_SACH values (1043, 2, 'N')
-insert into CUON_SACH values (1043, 3, 'N')
-insert into CUON_SACH values (1051, 1, 'Y')
-insert into CUON_SACH values (1051, 2, 'N')
-insert into CUON_SACH values (1051, 3, 'N')
-insert into CUON_SACH values (1052, 1, 'Y')
-insert into CUON_SACH values (1052, 2, 'N')
-insert into CUON_SACH values (1052, 3, 'N')
-insert into CUON_SACH values (1053, 1, 'Y')
-insert into CUON_SACH values (1053, 2, 'N')
-insert into CUON_SACH values (1053, 3, 'N')
-insert into CUON_SACH values (1061, 1, 'N')
-insert into CUON_SACH values (1061, 2, 'N')
-insert into CUON_SACH values (1061, 3, 'N')
-insert into CUON_SACH values (1062, 1, 'N')
-insert into CUON_SACH values (1062, 2, 'N')
-insert into CUON_SACH values (1062, 3, 'N')
-insert into CUON_SACH values (1063, 1, 'N')
-insert into CUON_SACH values (1063, 2, 'N')
-insert into CUON_SACH values (1063, 3, 'N')
-insert into CUON_SACH values (1071, 1, 'Y')
-insert into CUON_SACH values (1071, 2, 'Y')
-insert into CUON_SACH values (1071, 3, 'Y')
-insert into CUON_SACH values (1072, 1, 'Y')
-insert into CUON_SACH values (1072, 2, 'Y')
-insert into CUON_SACH values (1072, 3, 'Y')
-insert into CUON_SACH values (1073, 1, 'Y')
-insert into CUON_SACH values (1073, 2, 'Y')
-insert into CUON_SACH values (1073, 3, 'Y')
-insert into CUON_SACH values (1081, 1, 'Y')
-insert into CUON_SACH values (1081, 2, 'Y')
-insert into CUON_SACH values (1081, 3, 'Y')
-insert into CUON_SACH values (1082, 1, 'Y')
-insert into CUON_SACH values (1082, 2, 'Y')
-insert into CUON_SACH values (1082, 3, 'Y')
-insert into CUON_SACH values (1083, 1, 'Y')
-insert into CUON_SACH values (1083, 2, 'Y')
-insert into CUON_SACH values (1083, 3, 'Y')
-insert into CUON_SACH values (1091, 1, 'Y')
-insert into CUON_SACH values (1091, 2, 'Y')
-insert into CUON_SACH values (1091, 3, 'Y')
-insert into CUON_SACH values (1092, 1, 'Y')
-insert into CUON_SACH values (1092, 2, 'Y')
-insert into CUON_SACH values (1092, 3, 'Y')
-insert into CUON_SACH values (1093, 1, 'Y')
-insert into CUON_SACH values (1093, 2, 'Y')
-insert into CUON_SACH values (1093, 3, 'Y')
+INSERT INTO cuonsach (isbn, ma_cuonsach, tinhtrang)
+VALUES (1011, 1,'Y'), (1011, 2,'N'), (1011, 3,'N'), (1012, 1,'Y'),
+		(1012, 2,'N'), (1012, 3,'N'), (1013, 1,'Y'), (1013, 2,'N'),
+		(1013, 3,'N'), (1021, 1,'Y'),	(1021, 2,'N'), (1021, 3,'N'),
+		(1022, 1,'Y'), (1022, 2,'N'),	(1022, 3,'N'), (1023, 1,'Y'),
+		(1023, 2,'N'), (1023, 3,'N'),	(1031, 1,'Y'), (1031, 2,'N'),
+		(1031, 3,'N'), (1032, 1,'Y'),	(1032, 2,'N'), (1032, 3,'N'),
+		(1033, 1,'Y'), (1033, 2,'N'),	(1033, 3,'N'), (1041, 1,'Y'),
+		(1041, 2,'N'), (1041, 3,'N'),	(1042, 1,'Y'), (1042, 2,'N'),
+		(1042, 3,'N'), (1043, 1,'Y'),	(1043, 2,'N'), (1043, 3,'N'),
+		(1051, 1,'Y'), (1051, 2,'N'),	(1051, 3,'N'), (1052, 1,'Y'),
+		(1052, 2,'N'), (1052, 3,'N'),	(1053, 1,'Y'), (1053, 2,'N'),
+		(1053, 3,'N'), (1061, 1,'N'),	(1061, 2,'N'), (1061, 3,'N'),
+		(1062, 1,'N'), (1062, 2,'N'),	(1062, 3,'N'), (1063, 1,'N'),
+		(1063, 2,'N'), (1063, 3,'N'),	(1071, 1,'Y'), (1071, 2,'Y'),
+		(1071, 3,'Y'), (1072, 1,'Y'),	(1072, 2,'Y'), (1072, 3,'Y'),
+		(1073, 1,'Y'), (1073, 2,'Y'),	(1073, 3,'Y'), (1081, 1,'Y'),
+		(1081, 2,'Y'), (1081, 3,'Y'),	(1082, 1,'Y'), (1082, 2,'Y'),
+		(1082, 3,'Y'), (1083, 1,'Y'),	(1083, 2,'Y'), (1083, 3,'Y'),
+		(1091, 1,'Y'), (1091, 2,'Y'),	(1091, 3,'Y'), (1092, 1,'Y'),
+		(1092, 2,'Y'), (1092, 3,'Y'),	(1093, 1,'Y'), (1093, 2,'Y'),
+		(1093, 3,'Y')
+GO
 
-insert into MUON values (1011, 2, 1, '2022/07/09', '2022/07/23')
-insert into MUON values (1011, 3, 2, '2022/07/09', '2022/07/23')
-insert into MUON values (1012, 2, 4, '2022/07/09', '2022/07/23')
-insert into MUON values (1012, 3, 3, '2022/06/08', '2022/06/22')
-insert into MUON values (1013, 2, 6, '2022/06/08', '2022/06/22')
-insert into MUON values (1013, 3, 8, '2022/06/09', '2022/06/23')
-insert into MUON values (1021, 2, 5, '2022/06/09', '2022/06/23')
-insert into MUON values (1021, 3, 10, '2022/06/09', '2022/06/23')
-insert into MUON values (1022, 2, 12, '2022/06/09', '2022/06/23')
-insert into MUON values (1022, 3, 7, '2022/06/09', '2022/06/23')
-insert into MUON values (1023, 2, 14, '2022/06/08', '2022/06/22')
-insert into MUON values (1023, 3, 15, '2022/06/08', '2022/06/22')
-insert into MUON values (1031, 2, 1, '2022/06/08', '2022/06/22')
-insert into MUON values (1031, 3, 3, '2022/07/08', '2022/07/22')
-insert into MUON values (1032, 2, 5, '2022/07/08', '2022/07/22')
-insert into MUON values (1032, 3, 7, '2022/07/08', '2022/07/22')
-insert into MUON values (1033, 2, 7, '2022/07/08', '2022/07/22')
-insert into MUON values (1033, 3, 15, '2022/07/08', '2022/07/22')
-insert into MUON values (1041, 2, 1, '2022/07/08', '2022/07/22')
-insert into MUON values (1041, 3, 3, '2022/07/08', '2022/07/22')
-insert into MUON values (1042, 2, 5, '2022/07/08', '2022/07/22')
-insert into MUON values (1042, 3, 7, '2022/07/08', '2022/07/22')
-insert into MUON values (1043, 2, 15, '2022/07/08', '2022/07/22')
-insert into MUON values (1043, 3, 17, '2022/07/08', '2022/07/22')
-insert into MUON values (1051, 2, 15, '2022/07/08', '2022/07/22')
-insert into MUON values (1051, 3, 17, '2022/07/08', '2022/07/22')
-insert into MUON values (1052, 2, 15, '2022/07/08', '2022/07/22')
-insert into MUON values (1052, 3, 17, '2022/07/08', '2022/07/22')
-insert into MUON values (1053, 2, 19, '2022/07/08', '2022/07/22')
-insert into MUON values (1053, 3, 17, '2022/07/08', '2022/07/22')
-insert into MUON values (1061, 1, 17, '2022/07/08', '2022/07/22')
-insert into MUON values (1061, 2, 19, '2022/07/08', '2022/07/22')
-insert into MUON values (1061, 3, 21, '2022/07/08', '2022/07/22')
-insert into MUON values (1062, 1, 23, '2022/07/08', '2022/07/22')
-insert into MUON values (1062, 2, 19, '2022/07/08', '2022/07/22')
-insert into MUON values (1062, 3, 21, '2022/07/08', '2022/07/22')
-insert into MUON values (1063, 1, 23, '2022/07/08', '2022/07/22')
-insert into MUON values (1063, 2, 21, '2022/07/08', '2022/07/22')
-insert into MUON values (1063, 3, 23, '2022/07/08', '2022/07/22')
+INSERT INTO muon (isbn, ma_cuonsach, ma_docgia, ngay_muon, ngay_hethan)
+VALUES (1011, 2, 1, '2022/07/09', '2022/07/23'),
+		(1011, 3, 2, '2022/07/09', '2022/07/23'), (1012, 2, 4, '2022/07/09', '2022/07/23'),
+		(1012, 3, 3, '2022/06/08', '2022/06/22'), (1013, 2, 6, '2022/06/08', '2022/06/22'),
+		(1013, 3, 8, '2022/06/09', '2022/06/23'), (1021, 2, 5, '2022/06/09', '2022/06/23'),
+		(1021, 3, 10, '2022/06/09', '2022/06/23'), (1022, 2, 12, '2022/06/09', '2022/06/23'),
+		(1022, 3, 7, '2022/06/09', '2022/06/23'), (1023, 2, 14, '2022/06/08', '2022/06/22'),
+		(1023, 3, 15, '2022/06/08', '2022/06/22'), (1031, 2, 1, '2022/06/08', '2022/06/22'),
+		(1031, 3, 3, '2022/07/08', '2022/07/22'), (1032, 2, 5, '2022/07/08', '2022/07/22'),
+		(1032, 3, 7, '2022/07/08', '2022/07/22'), (1033, 2, 7, '2022/07/08', '2022/07/22'),
+		(1033, 3, 15, '2022/07/08', '2022/07/22'), (1041, 2, 1, '2022/07/08', '2022/07/22'),
+		(1041, 3, 3, '2022/07/08', '2022/07/22'), (1042, 2, 5, '2022/07/08', '2022/07/22'),
+		(1042, 3, 7, '2022/07/08', '2022/07/22'), (1043, 2, 15, '2022/07/08', '2022/07/22'),
+		(1043, 3, 17, '2022/07/08', '2022/07/22'), (1051, 2, 15, '2022/07/08', '2022/07/22'),
+		(1051, 3, 17, '2022/07/08', '2022/07/22'), (1052, 2, 15, '2022/07/08', '2022/07/22'),
+		(1052, 3, 17, '2022/07/08', '2022/07/22'), (1053, 2, 19, '2022/07/08', '2022/07/22'),
+		(1053, 3, 17, '2022/07/08', '2022/07/22'), (1061, 1, 17, '2022/07/08', '2022/07/22'),
+		(1061, 2, 19, '2022/07/08', '2022/07/22'), (1061, 3, 21, '2022/07/08', '2022/07/22'),
+		(1062, 1, 23, '2022/07/08', '2022/07/22'), (1062, 2, 19, '2022/07/08', '2022/07/22'),
+		(1062, 3, 21, '2022/07/08', '2022/07/22'), (1063, 1, 23, '2022/07/08', '2022/07/22'),
+		(1063, 2, 21, '2022/07/08', '2022/07/22'), (1063, 3, 23, '2022/07/08', '2022/07/22')
+GO
 
-insert into DANG_KY values (1061, 24, '2022/07/11', N'Thằng nào mượn trả lẹ cho bố!')
-insert into DANG_KY values (1061, 25, '2022/07/11', N'Thằng nào mượn trả lẹ cho bố!')
-insert into DANG_KY values (1061, 26, '2022/07/11', N'Thằng nào mượn trả lẹ cho bố!')
-insert into DANG_KY values (1062, 27, '2022/07/11', N'Thằng nào mượn trả lẹ cho bố!')
-insert into DANG_KY values (1062, 24, '2022/07/11', N'Thằng nào mượn trả lẹ cho bố!')
-insert into DANG_KY values (1062, 25, '2022/07/11', N'Thằng nào mượn trả lẹ cho bố!')
-insert into DANG_KY values (1063, 26, '2022/07/11', N'Thằng nào mượn trả lẹ cho bố!')
-insert into DANG_KY values (1063, 27, '2022/07/11', N'Thằng nào mượn trả lẹ cho bố!')
-insert into DANG_KY values (1063, 25, '2022/07/11', N'Thằng nào mượn trả lẹ cho bố!')
+INSERT INTO dangky (isbn, ma_docgia, ngay_dk, ghichu)
+VALUES (1061, 24, '2022/07/11', NULL), (1061, 25, '2022/07/11', NULL),
+		(1061, 26, '2022/07/11', NULL), (1062, 27, '2022/07/11', NULL),
+		(1062, 24, '2022/07/11', NULL), (1062, 25, '2022/07/11', NULL),
+		(1063, 26, '2022/07/11', NULL), (1063, 27, '2022/07/11', NULL),
+		(1063, 25, '2022/07/11', NULL)
+GO
 
-insert into QUA_TRINH_MUON values (1071, 1, '2022/04/11', 28, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL)
-insert into QUA_TRINH_MUON values (1071, 2, '2022/04/11', 29, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL)
-insert into QUA_TRINH_MUON values (1071, 3, '2022/04/11', 30, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL)
-insert into QUA_TRINH_MUON values (1072, 1, '2022/04/11', 31, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL)
-insert into QUA_TRINH_MUON values (1072, 2, '2022/04/11', 28, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL)
-insert into QUA_TRINH_MUON values (1072, 3, '2022/04/11', 29, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL)
-insert into QUA_TRINH_MUON values (1073, 1, '2022/04/11', 30, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL)
-insert into QUA_TRINH_MUON values (1073, 2, '2022/04/11', 31, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL)
-insert into QUA_TRINH_MUON values (1073, 3, '2022/04/11', 28, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL)
-insert into QUA_TRINH_MUON values (1081, 1, '2022/04/11', 29, '2022/04/25', '2022/04/30', 24000, 24000, NULL, NULL)
-insert into QUA_TRINH_MUON values (1081, 2, '2022/04/11', 30, '2022/04/25', '2022/04/30', 24000, 24000, NULL, NULL)
-insert into QUA_TRINH_MUON values (1081, 3, '2022/04/11', 31, '2022/04/25', '2022/04/30', 24000, 24000, NULL, NULL)
-insert into QUA_TRINH_MUON values (1082, 1, '2022/04/11', 28, '2022/04/25', '2022/04/30', 24000, 12000, NULL, N'Tiền nợ bố đéo trả')
-insert into QUA_TRINH_MUON values (1082, 2, '2022/04/11', 29, '2022/04/25', '2022/04/30', 24000, 12000, NULL, N'Tiền nợ bố đéo trả')
-insert into QUA_TRINH_MUON values (1082, 3, '2022/04/11', 30, '2022/04/25', '2022/04/30', 24000, 12000, NULL, N'Tiền nợ bố đéo trả')
-insert into QUA_TRINH_MUON values (1083, 1, '2022/04/11', 31, '2022/04/25', '2022/04/30', 24000, 12000, NULL, N'Tiền nợ bố đéo trả')
-insert into QUA_TRINH_MUON values (1083, 2, '2022/04/11', 28, '2022/04/25', '2022/04/30', 24000, 12000, NULL, N'Tiền nợ bố đéo trả')
-insert into QUA_TRINH_MUON values (1083, 3, '2022/04/11', 29, '2022/04/25', '2022/04/30', 24000, 12000, NULL, N'Tiền nợ bố đéo trả')
-
+INSERT INTO qtrinhmuon (isbn, ma_cuonsach, ngay_muon, ma_docgia, ngay_hethan, ngay_tra, tien_phat, tien_datra, tien_coc, ghichu)
+VALUES (1071, 1, '2022/04/11', 28, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL),
+(1071, 2, '2022/04/11', 29, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL),
+(1071, 3, '2022/04/11', 30, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL),
+(1072, 1, '2022/04/11', 31, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL),
+(1072, 2, '2022/04/11', 28, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL),
+(1072, 3, '2022/04/11', 29, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL),
+(1073, 1, '2022/04/11', 30, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL),
+(1073, 2, '2022/04/11', 31, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL),
+(1073, 3, '2022/04/11', 28, '2022/04/25', '2022/04/18', NULL, NULL, NULL, NULL),
+(1081, 1, '2022/04/11', 29, '2022/04/25', '2022/04/30', 24000, 24000, NULL, NULL),
+(1081, 2, '2022/04/11', 30, '2022/04/25', '2022/04/30', 24000, 24000, NULL, NULL),
+(1081, 3, '2022/04/11', 31, '2022/04/25', '2022/04/30', 24000, 24000, NULL, NULL),
+(1082, 1, '2022/04/11', 28, '2022/04/25', '2022/04/30', 24000, 12000, NULL, NULL),
+(1082, 2, '2022/04/11', 29, '2022/04/25', '2022/04/30', 24000, 12000, NULL, NULL),
+(1082, 3, '2022/04/11', 30, '2022/04/25', '2022/04/30', 24000, 12000, NULL, NULL),
+(1083, 1, '2022/04/11', 31, '2022/04/25', '2022/04/30', 24000, 12000, NULL, NULL),
+(1083, 2, '2022/04/11', 28, '2022/04/25', '2022/04/30', 24000, 12000, NULL, NULL),
+(1083, 3, '2022/04/11', 29, '2022/04/25', '2022/04/30', 24000, 12000, NULL, NULL)
+GO
