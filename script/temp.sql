@@ -1,4 +1,5 @@
-/****** Script for SelectTopNRows command from SSMS  ******/
+﻿/****** Script for SelectTopNRows command from SSMS  ******/
+USE quanLyThuVien;
 UPDATE cuonsach
 SET tinhtrang = 'N'
 WHERE cuonsach.ma_cuonsach = '1';
@@ -88,3 +89,28 @@ WHERE nl.ma_docgia IN (SELECT DISTINCT te.ma_docgia_nglon FROM treem te
 SELECT * FROM nguoilon nl
 SELECT * FROM treem te
 SELECT * FROM muon m
+
+
+SELECT isbn, COUNT(*) FROM cuonsach cs
+GROUP BY cs.isbn;
+
+SELECT * FROM dausach;
+
+INSERT INTO tuasach (ma_tuasach, tuasach, tacgia, tomtat)
+VALUES (10, N'Bách khoa toàn thư', N'Nhiều tác giả', N'Nội dung bổ ích')
+GO
+
+INSERT INTO dausach (isbn, ma_tuasach, ngonngu, bia, trangthai)
+VALUES 	(1094, 10, N'Tiếng Việt', N'Bìa cứng', 'Y'),
+		(1095, 10, N'Tiếng Anh', N'Bìa cứng', 'Y')
+GO
+
+UPDATE dausach
+SET trangthai = 'Y'
+WHERE isbn = 1094;
+GO
+
+SELECT * FROM tuasach ts
+WHERE ts.tacgia = N'Jack London' AND ts.tuasach = N'The Night-Born' AND ts.tomtat = N'Tóm tắt 2';
+
+DELETE FROM tuasach WHERE ma_tuasach = 11;
