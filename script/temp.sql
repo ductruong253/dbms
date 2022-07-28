@@ -106,7 +106,7 @@ VALUES 	(1094, 10, N'Tiếng Việt', N'Bìa cứng', 'Y'),
 GO
 
 UPDATE dausach
-SET trangthai = 'Y'
+SET trangthai = 'N'
 WHERE isbn = 1094;
 GO
 
@@ -114,3 +114,44 @@ SELECT * FROM tuasach ts
 WHERE ts.tacgia = N'Jack London' AND ts.tuasach = N'The Night-Born' AND ts.tomtat = N'Tóm tắt 2';
 
 DELETE FROM tuasach WHERE ma_tuasach = 11;
+
+SELECT DATEDIFF(hour, '2004-07-29', GETDATE())/8766;
+
+DECLARE @dob  datetime
+SET @dob='1992-01-09'
+
+SELECT * FROM docgia
+SELECT * FROM nguoilon
+
+SELECT COUNT(*) FROM docgia;
+SELECT MAX(ma_docgia) FROM docgia;
+
+ALTER PROC sp_GetID (@table_name NVARCHAR(128), @column_name NVARCHAR(128), @value INT OUTPUT)
+AS
+BEGIN
+	DECLARE @item_count INT;
+	DECLARE @getCountSql NVARCHAR(MAX);
+	SET @getCountSql = N'SELECT @cnt=COUNT(*) FROM ' + @table_name;
+	EXEC sp_executesql @getCountSql, N'@cnt INT OUTPUT', @cnt = @item_count OUTPUT;
+
+	DECLARE @max_value INT;
+	DECLARE @getMaxSql NVARCHAR(MAX);
+	SET @getMaxSql = N'SELECT @max=MAX(' + @column_name +') FROM ' + @table_name;
+	EXEC sp_executesql @getMaxSql, N'@max INT OUTPUT', @max = @max_value OUTPUT;
+
+	IF (@max_value = @item_count)
+	BEGIN
+		SET @value = @item_count;
+	END
+	ELSE
+	BEGIN
+		SET @value = 1;
+		DECLARE @current_id_set NVARCHAR(MAX);
+		SET @current_id_set = N'SELECT ' + @column_name + N' FROM ' + @table_name;
+		WHILE @value IN (EXEC sp_executesql @current_id_set)
+	END
+END
+
+DECLARE @result INT;
+EXEC sp_GetID @table_name = docgia, @column_name = ma_docgia, @value = @result OUTPUT;
+SELECT @result;

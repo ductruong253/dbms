@@ -82,7 +82,7 @@ VALUES (1, 'Last of the Mohicans', 'James Fenimore Cooper', N'Tóm tắt 1'),
 		(7, N'Du lịch sao Hỏa', N'Khắc Ngáo', N'Tóm tắt 7'),
 		(8, N'Lao vào đoàn xe tăng', N'Khắc Chân', N'Tóm tắt 8'),
 		(9, N'Chui vào lòng đất', N'Khải Hoàng', N'Tóm tắt 9'),
-		(10, N'Bách khoa toàn thư', N'Nhiều tác giả', N'Chứa đựng nhiều nội dung bổ ích')
+		(10, N'Bách khoa toàn thư', N'Nhiều tác giả', N'Nội dung bổ ích')
 GO
 
 INSERT INTO dausach (isbn, ma_tuasach, ngonngu, bia, trangthai)
@@ -114,7 +114,7 @@ VALUES (1011, 1, N'Tiếng Anh', N'Bìa mềm', 'Y'),
 		(1092, 9, N'Tiếng Pháp', N'Bìa mềm', 'Y'),
 		(1093, 9, N'Tiếng Việt', N'Bìa cứng', 'Y'),
 		(1094, 10, N'Tiếng Pháp', N'Bìa cứng', 'Y'),
-		(1095, 10, N'Tiếng Anh', N'Bìa cứng', 'Y'),
+		(1095, 10, N'Tiếng Anh', N'Bìa cứng', 'Y')
 GO
 
 INSERT INTO cuonsach (isbn, ma_cuonsach, tinhtrang)
