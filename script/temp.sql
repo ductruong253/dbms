@@ -122,6 +122,7 @@ SET @dob='1992-01-09'
 
 SELECT * FROM docgia
 SELECT * FROM nguoilon
+SELECT * FROM treem
 
 SELECT COUNT(*) FROM docgia;
 SELECT MAX(ma_docgia) FROM docgia;
@@ -155,3 +156,5 @@ END
 DECLARE @result INT;
 EXEC sp_GetID @table_name = docgia, @column_name = ma_docgia, @value = @result OUTPUT;
 SELECT @result;
+
+s
