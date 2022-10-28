@@ -1,0 +1,2 @@
+Khóa 2 giai đoạn (2PL):
+	- Không thực hiện lock nào nữa sau khi đã thực hiện 1 unlock bất kì

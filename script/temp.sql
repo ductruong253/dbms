@@ -157,4 +157,7 @@ DECLARE @result INT;
 EXEC sp_GetID @table_name = docgia, @column_name = ma_docgia, @value = @result OUTPUT;
 SELECT @result;
 
-s
+DELETE FROM muon WHERE isbn = 1013 AND ma_cuonsach = 2;
+
+INSERT INTO muon (isbn, ma_cuonsach, ma_docgia, ngay_muon, ngay_hethan)
+VALUES (1011, 1, 4, '09/03/2022', '12/03/2022')
