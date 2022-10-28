@@ -1,2 +1,24 @@
-Khóa 2 giai đoạn (2PL):
+Giao thức Khóa 2 giai đoạn (2PL):
 	- Không thực hiện lock nào nữa sau khi đã thực hiện 1 unlock bất kì
+
+Cơ chế khóa đơn giản: {lock(x), unlock(x)}
+	- tại 1 thời điểm chỉ có 1 giao tác được giữ lock trên 1 ĐVDL, các giao tác khác phải chờ
+
+Cơ chế khóa đọc - ghi: {RL(x), WL(x), unlock(x)}
+	- Read lock = share lock (RL = SL), write lock = exclusive lock (WL = XL)
+	- Trước khi đọc phải đặt RL, trước khi ghi phải đặt WL
+	- Tuy nhiên nếu trong giao tác có thực hiện đọc và ghi trên cùng 1 ĐVDL thì phải đặt XL trước khi đọc ĐVDL đó
+	- Khóa đọc có thể share nhau, nhưng khóa ghi trên 1 đvdl thì chỉ được cấp cho 1 giao tác khi không có giao tác nào
+		nắm giữ khóa đọc hoặc khi của đvdl đó. Vd: T1 đang có SL trên đvdl A thì T2 sẽ không dc cấp XL trên A
+		cho tới khi T1 nhả khóa SL(A).
+
+Cơ chế khóa đọc - ghi, có hỗ trợ tăng cấp:
+	- Tương tự cơ chế khóa đọc - ghi, nhưng khác ở chỗ:
+		- Nếu 1 giao tác chứa 2 thao tác đọc và ghi trên cùng 1 đvdl thì không cần giữ XL ngay từ đầu,
+		mà chỉ cần cấp khóa SL trước khi đọc và tăng cấp lên XL trước khi ghi
+
+Cơ chế khóa đọc - ghi - update (UL(x)):
+	- Khóa đọc - ghi hoạt động như những cơ chế khóa khác
+	- UL(x) được cấp khi giao tác có nhu cầu đọc trước, khi sau trên 1 đvdl
+	- Giao tác giữ UL chỉ được đọc trên đvdl, khi nào chuyển thành XL mới được phép ghi
+	- Khi UL được cấp cho 1 giao tác, các giao tác khác không được cấp bất kì khóa nào khác (SL, XL)
